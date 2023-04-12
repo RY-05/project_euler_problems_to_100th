@@ -6,6 +6,8 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 # find the sum of the even-valued terms.
 
+# //
+
 
 # set variable for highest value in sequence
 lim = 4000000
