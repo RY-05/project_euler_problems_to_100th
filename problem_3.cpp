@@ -50,7 +50,7 @@ print(factors)
 prime_factors = []
 
 for j in factors:
-    if prime(j) is True:
+    if prime(j):
         prime_factors.append(j)
 
 print(prime_factors)
