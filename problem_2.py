@@ -38,4 +38,6 @@ total = 0
 for i in fibonacci(lim):
     if i % 2 == 0:
         total += i
-print(total)
+        
+# this returns 4613732, the correct answer
+print("The sum of the even-valued terms is " + str(total) + ".")
