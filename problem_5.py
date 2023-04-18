@@ -31,6 +31,7 @@ def min_div(bound):
 
     max_powers = []
     for i in primes:
+        
         # multiples of each prime number
         multiples = []
         for j in nat_num_list:
