@@ -14,12 +14,12 @@ bound2 = 20
 
 
 def min_div(bound):
-    # list of all integers from 2 to bound
+    # list of all integers from 1 to bound
     nat_num_list = []
     for i in range(1, bound + 1):
         nat_num_list.append(i)
 
-    # list of primes between 2 and bound
+    # list of primes between 1 and bound
     primes = []
     for i in range(1, bound + 1):
         factors = []
