@@ -8,7 +8,7 @@
 import math as m
 
 # val = int(input("Enter n such that you receive the nth prime number."))
-val = 1000
+val = 10001
 
 
 def prime_nth_term(a):
@@ -68,6 +68,5 @@ else:
 
     else:
         print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
-
-
-# returns 104743 which is the correct answer
+        
+# prints 104743 which is the correct answer
