@@ -7,7 +7,8 @@
 
 import math as m
 
-val = 10001
+# val = int(input("Enter n such that you receive the nth prime number."))
+val = 1000
 
 
 def prime_nth_term(a):
@@ -36,12 +37,37 @@ def prime_nth_term(a):
     if primes_passed == a:
         return i
 
-if str(val)[-1
+# main programme
+if len(str(val)) == 1:
+    if str(val)[-1] == "1":
+        print("The " + str(val) + "st prime number is " + str(prime_nth_term(val)) + ".")
 
-elif
+    elif str(val)[-1] == "2":
+        print("The " + str(val) + "nd prime number is " + str(prime_nth_term(val)) + ".")
 
-elif
+    elif str(val)[-1] == "3":
+        print("The " + str(val) + "rd prime number is " + str(prime_nth_term(val)) + ".")
+
+    else:
+        print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+
 
 else:
-  print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+    if str(val)[-2] != "1":
+        if str(val)[-1] == "1":
+            print("The " + str(val) + "st prime number is " + str(prime_nth_term(val)) + ".")
+
+        elif str(val)[-1] == "2":
+            print("The " + str(val) + "nd prime number is " + str(prime_nth_term(val)) + ".")
+
+        elif str(val)[-1] == "3":
+            print("The " + str(val) + "rd prime number is " + str(prime_nth_term(val)) + ".")
+
+        else:
+            print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+
+    else:
+        print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+
+
 # returns 104743 which is the correct answer
