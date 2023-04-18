@@ -63,6 +63,7 @@ for a in range(99, 10, -1):
         if pali(a*b):
             two_dig_pali_list.append(a*b)
             
+# this returns 9009, which is consistent with the question
 print(str(max(two_dig_pali_list)), "is the largest palindromic number that is a product of two two-digit numbers.")
 
 
@@ -73,4 +74,5 @@ for a in range(999, 99, -1):
         if pali(a*b):
             three_dig_pali_list.append(a*b)
             
+# this returns 906609, the correct answer
 print(str(max(three_dig_pali_list)), "is the largest palindromic number that is a product of two three-digit numbers.")
