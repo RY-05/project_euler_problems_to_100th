@@ -29,9 +29,9 @@ def min_div(bound):
         if len(factors) == 2:
             primes.append(i)
 
-    # multiples of each prime number
     max_powers = []
     for i in primes:
+        # multiples of each prime number
         multiples = []
         for j in nat_num_list:
             if j % i == 0:
