@@ -1,14 +1,3 @@
-//   The prime factors of 13195 are 5, 7, 13 and 29.
-//   What is the largest prime factor of the number 600851475143 ?
-
-#   //
-
-//  Re-write code in C++ because Python is too inefficient
-
-
-// Python code
-
-/*
 import math as m
 
 num1 = 13195
@@ -59,4 +48,3 @@ for i in factors(num2):
 
 print("The prime factors of " + str(num1) + " are " + str(prime_facs) + ".")
 print("The largest prime factor of " + str(num2) + " is " + str(max(prime_facs)) + ".")
-*/
