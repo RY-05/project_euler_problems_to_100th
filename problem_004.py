@@ -25,13 +25,8 @@ def pali(num):
                 counter += 1
 
         # if in every check, both digits where equal
-        if counter == len(val) / 2:
-
-            # the number is a palindrome
-            return True
-
-        else:
-            return False
+        # the number is a palindrome
+        return counter == len(val) / 2
 
     else:
 
@@ -41,11 +36,7 @@ def pali(num):
             if val[i] == val[-(i + 1)]:
                 counter += 1
 
-        if counter == ((len(val) - 3) / 2) + 1:
-            return True
-
-        else:
-            return False
+        return counter == ((len(val) - 3) / 2) + 1
 
 
 def max_pali(dig):
@@ -58,4 +49,3 @@ print(f"{max_pali(2)} is the largest palindromic number that is a product of two
 
 # this returns 906609, the correct answer
 print(f"{max_pali(3)} is the largest palindromic number that is a product of two {3}-digit numbers.")
-
