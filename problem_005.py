@@ -1,23 +1,12 @@
-#   2520 is the smallest number that can be divided by each
-#   of the numbers from 1 to 10 without any remainder.
-
-#   What is the smallest positive number that is
-#   evenly divisible by all the numbers from 1 to 20?
-
-# //
-
-
 import math as m
 
 bound1 = 10
-bound2 = 20
+bound2 = 200
 
 
 def min_div(bound):
     # list of all integers from 1 to bound
-    nat_num_list = []
-    for i in range(1, bound + 1):
-        nat_num_list.append(i)
+    nat_num_list = [i for i in range(1, bound + 1)]
 
     # list of primes between 1 and bound
     primes = []
@@ -31,20 +20,13 @@ def min_div(bound):
 
     max_powers = []
     for i in primes:
-        
-        # multiples of each prime number
-        multiples = []
-        for j in nat_num_list:
-            if j % i == 0:
-                multiples.append(j)
 
-        powers = []
+        # multiples of each prime number
+        multiples = [j for j in nat_num_list if j % i == 0]
 
         # multiples that can be expressed as power product
         x = m.ceil(m.log(multiples[-1], i))
-        for n in range(1, x + 1):
-            if i ** n in multiples:
-                powers.append(n)
+        powers = [n for n in range(1, x + 1) if (i ** n in multiples)]
 
         # greatest power product
         max_powers.append(max(powers))
@@ -57,10 +39,10 @@ def min_div(bound):
     return prod
 
 
-# when bound is 10, returns 2520, which is consistent with the question
-print("The smallest possible number that is evenly divisible by all integers from 1 to "\
-      + str(bound1) + " is " + str(min_div(bound1)) + ".")
+# returns 2520, which is consistent with the question
+print(f"The smallest possible number that is evenly divisible "
+      f"by all integers from 1 to {bound1} is {min_div(bound1)}.")
 
-# when bound = 20, returns 232792560, the correct answer
-print("The smallest possible number that is evenly divisible by all integers from 1 to "\
-      + str(bound2) + " is " + str(min_div(bound2)) + ".")
+# returns 232792560, the correct answer
+print(f"The smallest possible number that is evenly divisible "
+      f"by all integers from 1 to {bound2} is {min_div(bound2)}.")
