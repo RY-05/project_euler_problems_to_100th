@@ -4,7 +4,6 @@ fibo = [1, 2]
 
 
 def fibonacci(limit):
-
     # checking that the last term in the sequence is lesser than four million
     while fibo[-1] < limit:
 
@@ -19,15 +18,9 @@ def fibonacci(limit):
         else:
             fibonacci(limit)
 
-    return(fibo)
+    return fibo
 
 
-print(fibonacci(lim))
-
-total = 0
-for i in fibonacci(lim):
-    if i % 2 == 0:
-        total += i
-        
 # this returns 4613732, the correct answer
-print("The sum of the even-valued terms is " + str(total) + ".")
+print(f"The sum of the even-valued terms, whose values do not exceed {lim}, "
+      f"is {sum([i for i in fibonacci(lim) if (i % 2 == 0)])}.")
