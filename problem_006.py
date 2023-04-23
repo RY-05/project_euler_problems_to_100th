@@ -21,3 +21,4 @@ print(f"The difference between the sum of the squares and "
 print(f"The difference between the sum of the squares and "
       f"the square of the sum of all natural numbers up to "
       f"{lim2} is {sqr_sum(lim2) - sum_sqr(lim2)}.")
+
