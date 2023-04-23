@@ -21,7 +21,7 @@ def pali(num):
 
             # checks if the nth digit from the front
             # is equal to the nth digit from the back
-            if val[i] == val[-(i+1)]:
+            if val[i] == val[-(i + 1)]:
                 counter += 1
 
         # if in every check, both digits where equal
@@ -38,7 +38,7 @@ def pali(num):
         # if odd, number of checks is 1/2(x-3)
         # where x is the number of digits
         for i in range(0, int((len(val) - 3) / 2) + 1):
-            if val[i] == val[-(i+1)]:
+            if val[i] == val[-(i + 1)]:
                 counter += 1
 
         if counter == ((len(val) - 3) / 2) + 1:
@@ -48,23 +48,14 @@ def pali(num):
             return False
 
 
-two_dig_pali_list = []
+def max_pali(dig):
+    return max([a * b for a in range((10 ** dig) - 1, (10 ** (dig - 1)), -1)\
+            for b in range((10 ** dig) - 1, (10 ** (dig - 1)), -1) if pali(a * b)])
 
-for a in range(99, 10, -1):
-    for b in range(99, 10, -1):
-        if pali(a*b):
-            two_dig_pali_list.append(a*b)
-            
+
 # this returns 9009, which is consistent with the question
-print(str(max(two_dig_pali_list)), "is the largest palindromic number that is a product of two two-digit numbers.")
+print(f"{max_pali(2)} is the largest palindromic number that is a product of two {2}-digit numbers.")
 
-
-three_dig_pali_list = []
-
-for a in range(999, 99, -1):
-    for b in range(999, 99, -1):
-        if pali(a*b):
-            three_dig_pali_list.append(a*b)
-            
 # this returns 906609, the correct answer
-print(str(max(three_dig_pali_list)), "is the largest palindromic number that is a product of two three-digit numbers.")
+print(f"{max_pali(3)} is the largest palindromic number that is a product of two {3}-digit numbers.")
+
