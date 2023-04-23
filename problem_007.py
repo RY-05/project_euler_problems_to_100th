@@ -1,6 +1,6 @@
 import math as m
 
-# val = int(input("Enter n such that you receive the nth prime number."))
+
 val = 10001
 
 
@@ -16,10 +16,7 @@ def prime_nth_term(a):
         i += 1
 
         # filling list of factors of i
-        temp_list = []
-        for j in range(1, m.floor(m.sqrt(i)) + 1):
-            if i % j == 0:
-                temp_list.append(j)
+        temp_list = [j for j in range(1, m.floor(m.sqrt(i)) + 1) if (i % j == 0)]
         temp_list.append(i)
 
         # prime numbers have two distinct factors: 1 and themselves
@@ -30,36 +27,37 @@ def prime_nth_term(a):
     if primes_passed == a:
         return i
 
+
 # main programme
 if len(str(val)) == 1:
     if str(val)[-1] == "1":
-        print("The " + str(val) + "st prime number is " + str(prime_nth_term(val)) + ".")
+        print(f"The {val}st prime number is {prime_nth_term(val)}.")
 
     elif str(val)[-1] == "2":
-        print("The " + str(val) + "nd prime number is " + str(prime_nth_term(val)) + ".")
+        print(f"The {val}nd prime number is {prime_nth_term(val)}.")
 
     elif str(val)[-1] == "3":
-        print("The " + str(val) + "rd prime number is " + str(prime_nth_term(val)) + ".")
+        print(f"The {val}rd prime number is {prime_nth_term(val)}.")
 
     else:
-        print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+        print(f"The {val}th prime number is {prime_nth_term(val)}.")
 
 
 else:
     if str(val)[-2] != "1":
         if str(val)[-1] == "1":
-            print("The " + str(val) + "st prime number is " + str(prime_nth_term(val)) + ".")
+            print(f"The {val}st prime number is {prime_nth_term(val)}.")
 
         elif str(val)[-1] == "2":
-            print("The " + str(val) + "nd prime number is " + str(prime_nth_term(val)) + ".")
+            print(f"The {val}nd prime number is {prime_nth_term(val)}.")
 
         elif str(val)[-1] == "3":
-            print("The " + str(val) + "rd prime number is " + str(prime_nth_term(val)) + ".")
+            print(f"The {val}rd prime number is {prime_nth_term(val)}.")
 
         else:
-            print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
+            print(f"The {val}th prime number is {prime_nth_term(val)}.")
 
     else:
-        print("The " + str(val) + "th prime number is " + str(prime_nth_term(val)) + ".")
-        
-# prints 104743 which is the correct answer
+        print(f"The {val}th prime number is {prime_nth_term(val)}.")
+
+# returns 104743, the correct answer
