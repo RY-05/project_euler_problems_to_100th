@@ -1,7 +1,7 @@
 import math as m
 
 bound1 = 10
-bound2 = 200
+bound2 = 20
 
 
 def min_div(bound):
