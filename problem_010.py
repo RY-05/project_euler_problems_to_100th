@@ -1,9 +1,3 @@
-#   The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-#   Find the sum of all the primes below two million.
-
-#   //
-
-
 import math as m
 
 lim1 = 10
@@ -32,13 +26,8 @@ def primes(x):
     return list
 
 
-sum = 0
-for i in primes(lim1):
-    sum += i
-print(sum)
+# This returns 17, which is consistent with the question
+print(f"The sum of all primes below {lim1} is {sum([i for i in primes(lim1)])}.")
 
-
-sum = 0
-for i in primes(lim2):
-    sum += i
-print(sum)
+# This returns 142913828922, the correct answer
+print(f"The sum of all primes below {lim2} is {sum([i for i in primes(lim2)])}.")
