@@ -3,6 +3,7 @@ import math as m
 num1 = 13195
 num2 = 600851475143
 
+
 def prime_bool(x):
     # variable counts factors of x, besides 1 and x
     fac_count = 2
@@ -22,29 +23,17 @@ def prime_bool(x):
 
 
 def factors(x):
-    list = []
-    for i in range(1, (x // 2) + 1):
-        if x % i == 0:
-            list.append(i)
-    list.append(x)
-
-    return list
+    return [i for i in range(1, (x // 2) + 1) if (x % i == 0)]
 
 
-prime_facs = []
-for i in factors(num1):
-    if prime_bool(i):
-        prime_facs.append(i)
+def prime_facs(x):
+    return [i for i in factors(x) if prime_bool(i)]
+
 
 # this returns 5, 7, 13 and 29, which is consistent with the question
-print("The prime factors of " + str(num1) + " are " + str(prime_facs) + ".")
-print("The largest prime factor of " + str(num1) + " is " + str(max(prime_facs)) + ".")
+print(f"The prime factors of {num1} are {prime_facs(num1)}, "
+      f"of which {max(prime_facs(num1))} is the largest.")
 
-
-prime_facs = []
-for i in factors(num2):
-    if prime_bool(i):
-        prime_facs.append(i)
-
-print("The prime factors of " + str(num1) + " are " + str(prime_facs) + ".")
-print("The largest prime factor of " + str(num2) + " is " + str(max(prime_facs)) + ".")
+# this returns 6857, the correct answer
+print(f"The prime factors of {num2} are {[prime_facs(num2)]}, "
+      f"of which {max(prime_facs(num2))} is the largest.")
